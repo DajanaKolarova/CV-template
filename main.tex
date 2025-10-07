@@ -1,0 +1,192 @@
+
+\documentclass[11pt, a4paper]{article} 
+\usepackage{tikz}
+\usepackage[T1]{fontenc}     
+\usepackage[utf8]{inputenc}  
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        
+\usepackage{xcolor}          
+\usepackage{marvosym}        
+\usepackage{eso-pic}  % kreslení do pozadí stránek
+\usepackage{enumitem}        
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+\usepackage{FiraSans}        
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+\newcommand{\dates}[1]{\hfill\mbox{#1}}
+\newcommand{\SC}[1]{\textls[80]{\MakeUppercase{#1}}}
+\newcommand{\is}{\par\vskip.5ex plus .4ex} 
+\newcommand{\smaller}[1]{{\small\textbullet\ #1}}
+\newcommand{\headleft}[1]{%
+  \vspace*{3ex}%
+  {\bfseries \SC{#1}}\par
+  \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}%
+}
+\newcommand{\headright}[1]{%
+  \vspace*{2.5ex}%
+  {\color{cvblue}\Large\bfseries \SC{#1}}\par
+  \vspace*{-2ex}{\color{cvblue}\hrulefill}\par
+}
+
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t][\textheight][t]{0.33\textwidth}
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} 
+{\color{white}%
+  \hspace*{0.05mm}
+    \kern0.09\textwidth\relax
+  \begin{minipage}[t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+\AddToShipoutPictureBG{%
+  \AtPageLowerLeft{%
+    \color{cvblue!90}\rule{.33\paperwidth}{\paperheight}%
+  }%
+}
+
+\Large name surname \\[1.5ex] 
+
+\small name.surname@mail.com \\[0.4ex]
+
+\normalsize
+
+\newcommand{\lang}[2]{%
+  \textbf{#1} &
+  % plná
+  \foreach \i in {1,...,#2}{\tikz \fill (0,0) circle (3pt);\hspace{2pt}}%
+  % prázdná (jen pokud je co kreslit)
+  \pgfmathtruncatemacro{\nempty}{max(0,5-#2)}%
+  \ifnum\nempty>0
+    \foreach \i in {1,...,\nempty}{\tikz \draw (0,0) circle (3pt);\hspace{2pt}}%
+  \fi
+  \\[0.8ex]
+}
+\headleft{Skills}
+\begin{tabular}{l l}
+\lang{Cloning}{5}
+\lang{Bacterial cell cultures}{5}
+\lang{Protein purification}{5}
+\lang{Kinetic assay}{2}
+\lang{X-ray crystallography}{1}
+\lang{Cryo-EM}{1}
+\lang{Pymol}{4}
+\lang{Snapgene}{5}
+\lang{Python}{3}
+\lang{Shell}{3}
+\lang{LaTex}{3}
+\end{tabular}
+
+\headleft{Languages}
+\begin{tabular}{p{38mm} l}
+\lang{English}{5}
+\lang{Italian}{5}
+\lang{Czech}{5}
+\lang{Spanish}{3}
+\end{tabular}
+
+
+\headleft{Interests}
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+\item 3D printing
+\item Photography
+\item Programming
+\item AI
+\item Notion
+\item Science communication
+\end{itemize}
+
+\headleft{Achievements}
+\begin{itemize}[noitemsep, topsep=0pt, leftmargin=*]
+
+
+  
+\end{itemize}
+
+\end{minipage}}
+
+\kern0.09\textwidth\relax
+\end{minipage}
+\hskip2.5em
+\begin{minipage}[t][\textheight][t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}
+
+\vspace{2ex}
+
+\headright{Experience}
+
+\textbf{\textsc{Research} at IOCB CAS}  \dates{11/2018--Present} \\
+\textbf{Structural and functional characterization of IMPDH C-terminal region from \textit{Mycobacterium smegmatis}} (Bachelor’s thesis, 2021--2024).
+\begin{itemize}
+  \item Performed structural analysis of CryoEM data to identify key interactions within the enzyme.
+  \item Designed targeted point mutations and deletions based on structural insights.
+  \item Constructed expression vectors and performed heterologous protein expression in \textit{E. coli}.
+  \item Purified recombinant proteins using FPLC and conducted kinetic assays. 
+ \item Assisted in training of a high school student in molecular biology laboratory methods.
+ 
+\hfill\textit{Supervisor:}
+\end{itemize}
+\textbf{Study of protein interactions in viral hepatitis }
+
+\textbf{Synthesis of Pyrimidine Analogues as Potential Inhibitors of Prostaglandin E2 Production} (Internship, 2020).
+
+\textbf{Preparation of matrix protein MPMV for X-ray structural analysis} (high school project, 2018--2020).
+
+
+\headright{Courses and projects}
+\textsc{\textbf{Cryo-imaging of Biological Samples} course}
+\dates{4/2025} \\
+\smaller{Hands-on training in plunge \& high-pressure freezing; cryo-imaging on confocal \& TEM of vitrified specimens.}
+
+\textsc{\textbf{Bioimage Analysis Course}, ATHENES Program.} \dates{11/2024--12/2024} \\
+\smaller{Hands-on training in advanced bioimage analysis for biological data interpretation. Practical applications of image processing, segmentation, and quantitative analysis in biomedical research.}
+
+\smaller{Developed deep learning model for detecting TB in chest X-ray images.}
+
+\textsc{\textbf{University Club (UNIQORN UCT).}} \dates{01/2024--Present} \\
+\smaller{Designed and implemented internal system in Notion for project management, team collaboration and knowledge sharing.}
+
+\smaller{Created visuals and managed digital communication.}
+
+\textsc{\textbf{Co-Organizer of Lesamáj.}} \dates{Apr 2022 - Jan 2024} \\
+\smaller{Co-organized a non-profit student festival. Led event planning, team coordination, and program curation. Developed and expanded the festival’s visual identity}
+
+
+\textsc{\textbf{Peer student support}} \dates{Present} \\
+\smaller{Teaching a series of workshops for students on time and study management, VŠCHT (2025)}
+
+\smaller{Buddy: volunteer role focused on supporting first-year students, providing mentoring, and facilitating their adaptation to the university environment.}
+
+%\textsc{Science Week, Czech Technical University} \dates{06/2018} \\
+%\smaller{Project: “Symmetry breaking in laser resonators”, data processing and presentation.}
+
+\headright{Education}
+
+\textsc{\textbf{Master in Bioinformatics}} 
+\dates{09/2025--present} \\
+Joint programme of University of Chemistry and Technology and Czech technical university
+
+\textbf{Bachelor in Biochemistry and Microbiology}
+\dates{09/2021--09/2025} \\
+University of Chemistry and Technology
+
+%\textsc{Masaryk Secondary School of Chemistry}
+%\dates{09/2016--06/2020} \\
+\end{minipage}
+\end{document}
